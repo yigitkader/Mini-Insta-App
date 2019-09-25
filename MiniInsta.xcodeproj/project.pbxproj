@@ -19,6 +19,7 @@
 		5AC293A0233AC8260006BF64 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2939F233AC8260006BF64 /* FeedVC.swift */; };
 		5AC293A2233AC8640006BF64 /* SignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC293A1233AC8630006BF64 /* SignVC.swift */; };
 		5AF0BAAB233ADBAD0046137F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF0BAAA233ADBAD0046137F /* GoogleService-Info.plist */; };
+		5AF0BAAD233B9D7C0046137F /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0BAAC233B9D7C0046137F /* FeedCell.swift */; };
 		8FD10D5F4497B395EC341AD4 /* Pods_MiniInsta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE45C611E1540FB132AC712 /* Pods_MiniInsta.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		5AC2939F233AC8260006BF64 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		5AC293A1233AC8630006BF64 /* SignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC.swift; sourceTree = "<group>"; };
 		5AF0BAAA233ADBAD0046137F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5AF0BAAC233B9D7C0046137F /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		5DE45C611E1540FB132AC712 /* Pods_MiniInsta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniInsta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1ABB1C81DA2FB5F77DC36C /* Pods-MiniInsta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniInsta.debug.xcconfig"; path = "Target Support Files/Pods-MiniInsta/Pods-MiniInsta.debug.xcconfig"; sourceTree = "<group>"; };
 		91AFB390C14F92D1B0832510 /* Pods-MiniInsta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniInsta.release.xcconfig"; path = "Target Support Files/Pods-MiniInsta/Pods-MiniInsta.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				5AC29383233AC2360006BF64 /* SceneDelegate.swift */,
 				5AC293A1233AC8630006BF64 /* SignVC.swift */,
 				5AC2939F233AC8260006BF64 /* FeedVC.swift */,
+				5AF0BAAC233B9D7C0046137F /* FeedCell.swift */,
 				5AC29397233AC2860006BF64 /* UploadVC.swift */,
 				5AC29399233AC2A40006BF64 /* SettingVC.swift */,
 				5AC29387233AC2360006BF64 /* Main.storyboard */,
@@ -229,6 +232,7 @@
 			files = (
 				5AC293A0233AC8260006BF64 /* FeedVC.swift in Sources */,
 				5AC293A2233AC8640006BF64 /* SignVC.swift in Sources */,
+				5AF0BAAD233B9D7C0046137F /* FeedCell.swift in Sources */,
 				5AC2939A233AC2A40006BF64 /* SettingVC.swift in Sources */,
 				5AC29382233AC2360006BF64 /* AppDelegate.swift in Sources */,
 				5AC29398233AC2860006BF64 /* UploadVC.swift in Sources */,

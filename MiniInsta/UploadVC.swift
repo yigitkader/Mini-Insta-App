@@ -26,7 +26,7 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //CALL TIMER FUNC
+        //Call Time Func
         timerImageFunc()
 
         
@@ -37,8 +37,85 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     
     
-    
+    /* STORAGE AND DATABASE OPR. FIREBASE */
     @IBAction func postButton(_ sender: Any) {
+        
+        buttonPost.isEnabled = false
+        
+        /*  Storage*/
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        let mediaFolder = storageRef.child("Media")
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
+            
+            let uuid = UUID().uuidString
+            
+            let imageRef = mediaFolder.child("\(uuid).jpg")
+            
+            imageRef.putData(data, metadata: nil) { (metaData, error) in
+                
+                if error != nil {
+                    //error
+                    
+                    self.makeAlertFunc(alertTitle: "Error", alertMessage: error?.localizedDescription ?? "error")
+                }else{
+                    
+                    //no error
+                    
+                    imageRef.downloadURL { (url, error) in
+                        
+                        if error != nil {
+                            
+                            self.makeAlertFunc(alertTitle: "Error", alertMessage: error?.localizedDescription ?? "error")
+                            
+                        }else{
+                            
+                            let imageUrl = url?.absoluteString
+                            
+//                            print(imageUrl)
+                            
+                            
+                            /* -- DATABASE --- */
+                            
+                            
+                            let firestoreDatabase = Firestore.firestore()
+                            
+                            var firestoreRef : DocumentReference? = nil
+                            
+                            
+                            let firestorePost = ["imageUrl" : imageUrl!, "postedBy" : Auth.auth().currentUser!.email! , "postComment" : self.commentText.text! , "date" : FieldValue.serverTimestamp() , "likes" : 0 ] as [String : Any]
+                            
+                            firestoreRef = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { (error) in
+                                if error != nil {
+                                    
+                                    self.makeAlertFunc(alertTitle: "Error", alertMessage: error?.localizedDescription ?? "Error")
+                                }else{
+                                    self.buttonPost.isEnabled = true
+                                    self.imageView.image = UIImage(named: "")
+                                    self.commentText.text = ""
+                                    self.tabBarController?.selectedIndex = 0
+                                          
+                                          
+                                }
+                            })
+                            
+                        }
+                        
+                        
+                    }
+                    
+                }
+            }
+            
+            
+        }
+        
+        
+      
+        
+        
            
            
     }
