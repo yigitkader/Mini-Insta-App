@@ -130,9 +130,9 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.9.0)
+  - SDWebImage (5.1.1):
+    - SDWebImage/Core (= 5.1.1)
   - SDWebImage/Core (5.1.1)
-  - SDWebImage/MapKit (5.1.1):
-    - SDWebImage/Core
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -141,7 +141,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
-  - SDWebImage/MapKit
+  - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -194,6 +194,6 @@ SPEC CHECKSUMS:
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
 
-PODFILE CHECKSUM: 6ad97f6bc587799ed6925010b76621770200d421
+PODFILE CHECKSUM: aa29340647c65b42cff90222a7c4576cfb181a16
 
 COCOAPODS: 1.7.5

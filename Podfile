@@ -10,8 +10,8 @@ target 'MiniInsta' do
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
 	pod 'Firebase/Firestore'	
+	pod 'SDWebImage'
 
-	pod 'SDWebImage/MapKit'
 
 
 # add the Firebase pod for Google Analytics
