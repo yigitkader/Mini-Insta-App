@@ -20,7 +20,11 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var documentIdLabel: UILabel!
     
     
-   
+    var counter1 = 0
+    var counter2 = 0
+    
+    var userArray = [String]()
+    
     
     
     override func awakeFromNib() {
@@ -39,34 +43,36 @@ class FeedCell: UITableViewCell {
     
     @IBAction func likeButton(_ sender: Any) {
         
-            
-            updateLikesFunc()
-        
+        updateLikesFunc()
+               
+
     }
     
+
     
     func updateLikesFunc(){
         
-        
 
-       let firestoreDatabase = Firestore.firestore()
+        let firestoreDatabase = Firestore.firestore()
         
-       if let likeCounter = Int(userLikeLabel.text!) {
+        if let likeCounter = Int(self.userLikeLabel.text!) {
                     
                   
                           
          let likePostStore = ["likes" : likeCounter + 1] as [String : Any]
                       
          //update opr.  and merge is for just like
-         firestoreDatabase.collection("Posts").document(documentIdLabel.text!).setData(likePostStore, merge: true)
+         firestoreDatabase.collection("Posts").document(self.documentIdLabel.text!).setData(likePostStore, merge: true)
          
                 
                     
-    }
+        }
         
         
         
     }
+    
+    
     
 
 }

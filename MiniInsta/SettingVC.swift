@@ -12,8 +12,16 @@ import Firebase
 
 class SettingVC: UIViewController {
 
+    @IBOutlet weak var buttonLogOut: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonLogOut.layer.masksToBounds = true
+        buttonLogOut.layer.cornerRadius = 5
+        
 
         
     }

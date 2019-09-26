@@ -18,6 +18,7 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBOutlet weak var showImageView: UIImageView!
     @IBOutlet weak var commentText: UITextField!
     @IBOutlet weak var buttonPost: UIButton!
+    @IBOutlet weak var selecetImageLabel: UILabel!
     
     
     var timerImage = Timer()
@@ -87,6 +88,8 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                             
                             let firestorePost = ["imageUrl" : imageUrl!, "postedBy" : Auth.auth().currentUser!.email! , "postComment" : self.commentText.text! , "date" : FieldValue.serverTimestamp() , "likes" : 0 ] as [String : Any]
                             
+                            
+                            
                             firestoreRef = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { (error) in
                                 if error != nil {
                                     
@@ -145,16 +148,20 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
           
        if imageView.image == nil {
                
-           commentText.isHidden = true
-           buttonPost.isHidden = true
-           showImageView.isHidden = false
+            commentText.isHidden = true
+            buttonPost.isHidden = true
+            showImageView.isHidden = false
+            selecetImageLabel.isHidden = false
+            
                
-           }else{
-           commentText.isHidden = false
-           buttonPost.isHidden = false
-           showImageView.isHidden = true
-           
-           }
+       }else{
+            commentText.isHidden = false
+            buttonPost.isHidden = false
+            showImageView.isHidden = true
+            selecetImageLabel.isHidden = true
+            view.backgroundColor = UIColor.white
+       
+       }
           
        }
        /*  -- END OF CONTROL PHOTO --- */
